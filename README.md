@@ -1,1 +1,1 @@
-# ops-301d8-code-challenges
+# ops-301d8-code-challenges using Bash and Python
